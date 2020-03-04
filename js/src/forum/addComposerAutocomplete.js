@@ -103,7 +103,7 @@ export default function addComposerAutocomplete() {
             };
             const regTyped = fuzzyRegexp(typed);
 
-            let maxSuggestions = 7;
+            let maxSuggestions = 50;
 
             const findMatchingEmojis = matcher => {
               for (let i = 0; i < emojiKeys.length && maxSuggestions > 0; i++) {
