@@ -67,7 +67,13 @@ export default function addComposerAutocomplete() {
           // underline, '+' and '-'
           if (!/[a-z0-9]|\+|\-|_|\:/.test(character)) break;
           // make sure ':' followed by a whitespace or newline
-          if (character === ':' && (i == 0 || /\s/.test(value.substr(i - 1, 1)))) {
+          // 注释下面的代码 2020-03-09
+          // if (character === ':' && (i == 0 || /\s/.test(value.substr(i - 1, 1)))) {
+          //   emojiStart = i + 1;
+          //   break;
+          // }
+          // 只要有:就弹出emoji下拉框
+          if (character === ':') {
             emojiStart = i + 1;
             break;
           }
